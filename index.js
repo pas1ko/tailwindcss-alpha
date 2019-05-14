@@ -1,37 +1,37 @@
 const Color = require('color')
 
 const PREFIXES = {
-  backgroundColors: ['bg'],
-  textColors: ['text'],
-  borderColors: ['border', 'border-t', 'border-r', 'border-b', 'border-l'],
-  svgFill: ['fill'],
-  svgStroke: ['stroke']
+  backgroundColor: ['bg'],
+  textColor: ['text'],
+  borderColor: ['border', 'border-t', 'border-r', 'border-b', 'border-l'],
+  fill: ['fill'],
+  stroke: ['stroke']
 }
 
 const PROPERTIES = {
-  backgroundColors: ['backgroundColor'],
-  textColors: ['color'],
-  borderColors: [
+  backgroundColor: ['backgroundColor'],
+  textColor: ['color'],
+  borderColor: [
     'borderColor',
     'borderTopColor',
     'borderRightColor',
     'borderBottomColor',
     'borderLeftColor'
   ],
-  svgFill: ['fill'],
-  svgStroke: ['stroke']
+  fill: ['fill'],
+  stroke: ['stroke']
 }
 
 module.exports = function(opts = {}) {
   return function({ e, addUtilities, config }) {
     let {
-      alpha = config('alpha', config('opacity', {})),
+      alpha = config('theme.alpha', config('theme.opacity', {})),
       modules = {
-        backgroundColors: true,
-        textColors: false,
-        borderColors: false,
-        svgFill: false,
-        svgStroke: false
+        backgroundColor: true,
+        textColor: false,
+        borderColor: false,
+        fill: false,
+        stroke: false
       }
     } = opts
 
@@ -41,11 +41,11 @@ module.exports = function(opts = {}) {
 
       Object.entries(modules).forEach(([configKey, variants]) => {
         if (variants === true) {
-          variants = config(`modules.${configKey}`, [])
+          variants = config(`variants.${configKey}`, [])
         }
         if (variants === false) return
 
-        let colors = config(configKey, {})
+        let colors = config(`theme.${configKey}`, {})
 
         addUtilities(
           Object.entries(colors)

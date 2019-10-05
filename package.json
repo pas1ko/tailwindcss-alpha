@@ -1,6 +1,6 @@
 {
-  "name": "tailwindcss-alpha",
-  "version": "0.1.4",
+  "name": "@serh11p/tailwindcss-alpha",
+  "version": "0.2.0",
   "description": "Automatic alpha variants for your Tailwind CSS colors",
   "main": "index.js",
   "files": [
@@ -11,15 +11,14 @@
     "tailwindcss",
     "tailwind"
   ],
-  "author": "Brad Cornes <bradlc41@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bradlc/tailwindcss-alpha.git"
+    "url": "git+https://github.com/serh11p/tailwindcss-alpha.git"
   },
   "bugs": {
-    "url": "https://github.com/bradlc/tailwindcss-alpha/issues"
+    "url": "https://github.com/serh11p/tailwindcss-alpha/issues"
   },
-  "homepage": "https://github.com/bradlc/tailwindcss-alpha#readme",
+  "homepage": "https://github.com/serh11p/tailwindcss-alpha#readme",
   "license": "MIT",
   "dependencies": {
     "color": "^3.0.0"

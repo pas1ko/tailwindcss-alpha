@@ -1,4 +1,6 @@
-# tailwindcss-alpha
+> This [patch](https://github.com/bradlc/tailwindcss-alpha/pull/7) for [this](https://github.com/bradlc/tailwindcss-alpha) module.
+
+# @serh11p/tailwindcss-alpha
 
 > Automatic alpha variants for your Tailwind CSS colors
 
@@ -10,15 +12,15 @@ If you’re like me your Tailwind CSS color configuration often ends up looking 
 module.exports = {
   // ...
   backgroundColors: {
-    red: '#f00',
-    'red-10': 'rgba(255, 0, 0, 0.1)',
-    'red-20': 'rgba(255, 0, 0, 0.2)',
-    'red-50': 'rgba(255, 0, 0, 0.5)',
-    'red-80': 'rgba(255, 0, 0, 0.8)'
+    red: "#f00",
+    "red-10": "rgba(255, 0, 0, 0.1)",
+    "red-20": "rgba(255, 0, 0, 0.2)",
+    "red-50": "rgba(255, 0, 0, 0.5)",
+    "red-80": "rgba(255, 0, 0, 0.8)"
     // ...
   }
   // ...
-}
+};
 ```
 
 `tailwindcss-alpha` automatically generates alpha variations for each of your background, text, and border colors.
@@ -26,7 +28,7 @@ module.exports = {
 ## Install
 
 ```
-npm install --save-dev tailwindcss-alpha
+npm install --save-dev @serh11p/tailwindcss-alpha
 ```
 
 ```js
@@ -34,18 +36,18 @@ npm install --save-dev tailwindcss-alpha
 module.exports = {
   // ...
   plugins: [
-    require('tailwindcss-alpha')({
+    require("@serh11p/tailwindcss-alpha")({
       modules: {
         backgroundColors: true
       },
       alpha: {
-        '10': 0.1,
-        '30': 0.3
+        "10": 0.1,
+        "30": 0.3
       }
     })
   ]
   // ...
-}
+};
 ```
 
 ## Options
@@ -68,23 +70,23 @@ The keys of this object appear at the end of the utility class names. For exampl
 module.exports = {
   // ...
   backgroundColors: {
-    red: '#f00'
+    red: "#f00"
   },
   // ...
   plugins: [
-    require('tailwindcss-alpha')({
+    require("@serh11p/tailwindcss-alpha")({
       modules: {
         backgroundColors: []
       },
       alpha: {
-        '25': 0.25,
-        '50': 0.5,
-        '75': 0.75
+        "25": 0.25,
+        "50": 0.5,
+        "75": 0.75
       }
     })
   ]
   // ...
-}
+};
 ```
 
 The configuration above yields the following utilities:
